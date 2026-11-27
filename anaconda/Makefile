@@ -22,6 +22,8 @@ install:
 	install -m 644 syslinux-splash.png $(DESTDIR)/$(ANACONDABOOTDIR)/syslinux-splash.png
         # install -m 755 splashtolss.sh $(DESTDIR)/$(ANACONDADATADIR)
 	install -m 644 -t $(DESTDIR)/$(ANACONDADATADIR)/pixmaps theme/*
+	install -m 644 webui.css $(DESTDIR)/$(ANACONDADATADIR)/pixmaps
+	ln -sTfr $(DESTDIR)/usr/share/pixmaps/system-logo-white.png $(DESTDIR)/$(ANACONDADATADIR)/pixmaps/webui-header-logo.png
 
 clean:
 	rm -f splash.lss
