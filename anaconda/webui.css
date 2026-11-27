@@ -1,0 +1,33 @@
+/* ELN brand colors used in Anaconda WebUI
+ * Uses PatternFly default brand tokens — no overrides needed. */
+
+/* Installer header logo — served by cockpit-ws via a symlink to
+ * /usr/share/anaconda/pixmaps/webui-header-logo.png.
+ * Remixes: override the symlink target to use a different logo. */
+.anaconda .logo {
+    background-image: url("webui-header-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-inline-size: 4rem;
+    margin-inline-end: 0.5rem;
+}
+
+/* Header bar background — PatternFly brand gradient */
+#anaconda-header-bar {
+    background: radial-gradient(circle at 2.5rem, var(--pf-t--global--color--brand--default) 32px, var(--pf-t--global--color--brand--hover) 100%);
+}
+
+/* Header title text — white on blue background */
+#anaconda-header-title {
+    --pf-v6-c-content--Color: white;
+}
+
+/* Kebab menu icon — inherit header text color */
+#toggle-kebab path {
+    fill: white;
+}
+
+#toggle-kebab:hover path {
+    fill: color-mix(in lch, white 75%, transparent);
+}
